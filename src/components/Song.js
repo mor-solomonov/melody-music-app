@@ -3,10 +3,10 @@ import React from 'react';
 
 const Song = () => {
     return (
-        <div classname="song-container">
+        <div className="song-container">
             <h1>Picture</h1>
-            <h1>Song Name</h1>
-            <h1>Artist</h1>
+            <h2>Song Name</h2>
+            <h3>Artist</h3>
         </div>
     );
 };
