@@ -1,2 +1,1 @@
-# Melody music app - created with React
-
+# Melody music app
