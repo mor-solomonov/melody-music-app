@@ -11,6 +11,16 @@ h3 {
   color: #383838;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h3,
+h4 {
+  font-weight: 400;
+  color: #666565;
+}
+
 .player {
   min-height: 20vh;
   display: -webkit-box;
@@ -91,5 +101,71 @@ h3 {
 
 .song-container h3 {
   font-size: 1rem;
+}
+
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 100%;
+  background: white;
+  -webkit-box-shadow: 2px 2px 50px #b1b0b0;
+          box-shadow: 2px 2px 50px #b1b0b0;
+  overflow: scroll;
+}
+
+.library h2 {
+  padding: 2rem;
+}
+
+.library-song {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+  cursor: pointer;
+}
+
+.library-song img {
+  width: 30%;
+}
+
+.library-song:hover {
+  background: #dedee1;
+}
+
+.song-description {
+  padding-left: 1rem;
+}
+
+.song-description h3 {
+  font-size: 1rem;
+}
+
+.song-description h4 {
+  font-size: 0.75rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
 }
 /*# sourceMappingURL=app.css.map */
