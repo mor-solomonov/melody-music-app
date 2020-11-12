@@ -21,7 +21,7 @@ function App() {
                 setIsPlaying={setIsPlaying}
                 isPlaying={isPlaying}
             />
-            <Library songs={songs} />
+            <Library songs={songs} setCurrentSong={setCurrentSong} songs={songs} />
         </div>
     );
 }
