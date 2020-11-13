@@ -1,11 +1,25 @@
 import React from 'react';
 
 
-const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying }) => {
+const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, id, setSongs }) => {
 
     const songSelectHandler = () => {
         setCurrentSong(song);
-        audioRef.current.play();
+        //Add Active state
+        const newSongs = songs.map((song) => {
+            if (song.id === id) {
+                return {
+                    ...song,
+                    active: true,
+                };
+            } else {
+                return {
+                    ...song,
+                    active: false,
+                };
+            }
+        });
+        setSongs(newSongs)
 
         //check if the sopng is playing
         //if the clickeditem is still undefined wait until it loads .then play
@@ -19,7 +33,7 @@ const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying }) => {
         }
     }
     return (
-        <div onClick={songSelectHandler} className="library-song">
+        <div onClick={songSelectHandler} className={`library-song ${song.active ? 'selected' : ''}`}>
             <img alt={song.name} src={song.cover}></img>
             <div className="song-description">
                 <h3>{song.name}</h3>
