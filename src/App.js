@@ -5,6 +5,7 @@ import Player from './components/Player';
 import Song from './components/Song';
 import data from './util';
 import Library from './components/Library';
+import Nav from './components/Nav';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     };
     return (
         <div className='App'>
+            <Nav />
             <Song currentSong={currentSong} />
             <Player
                 audioRef={audioRef}

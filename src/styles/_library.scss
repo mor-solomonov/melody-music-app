@@ -7,6 +7,8 @@
   background: white;
   box-shadow: 2px 2px 50px rgb(177, 176, 176);
   overflow: scroll;
+  transform: translate(-100%);
+  transition: all 0.5s ease;
   h2 {
     padding: 2rem;
   }
@@ -26,7 +28,7 @@
 }
 
 .selected {
-  background: yellow;
+  background: rgba(143, 126, 218, 0.562);
 }
 .song-description {
   padding-left: 1rem;
