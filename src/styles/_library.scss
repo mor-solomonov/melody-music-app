@@ -30,6 +30,11 @@
 .selected {
   background: rgba(143, 126, 218, 0.562);
 }
+
+.active-library {
+  transform: translate(0%);
+  opacity: 1;
+}
 .song-description {
   padding-left: 1rem;
   h3 {
