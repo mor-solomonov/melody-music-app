@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { playAudio } from '../util';
 
 const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, id, setSongs }) => {
 
@@ -21,9 +21,12 @@ const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, id, set
         });
         setSongs(newSongs)
 
-        //check if the sopng is playing
-        //if the clickeditem is still undefined wait until it loads .then play
+        //check if the song is playing
+        //if the clicked item is still undefined wait until it loads .then play
         //without this condition the audioref will not play
+        //playAudio is the same function - exported from util
+        playAudio(isPlaying, audioRef);
+
         if (isPlaying) {
             const playPromise = audioRef.current.play();
             if (playPromise !== undefined) {
