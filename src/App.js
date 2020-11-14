@@ -17,14 +17,22 @@ function App() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [songInfo, setSongInfo] = useState({
         currentTime: 0,
-        duration: 0
+        duration: 0,
+        animationPercentage: 0,
     });
     //Toggle library 
     const [libraryStatus, setLibraryStatus] = useState(false);
     const timeUpdateHandler = e => {
         const current = e.target.currentTime;
         const duration = e.target.duration;
-        setSongInfo({ ...songInfo, currentTime: current, duration });
+        //calculate percentage of current time
+        const roundedCurrent = Math.round(current);
+        const roundedDurations = Math.round(duration);
+        const animatedPercentage = Math.round((roundedCurrent / roundedDurations) * 100);
+
+        setSongInfo({
+            ...songInfo, currentTime: current, duration, animationPercentage: animatedPercentage,
+        });
     };
     return (
         <div className='App'>
