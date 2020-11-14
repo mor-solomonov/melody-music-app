@@ -47,7 +47,9 @@ h4 {
 
 .time-control input {
   width: 100%;
-  padding: 1rem 0rem;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .time-control p {
@@ -70,6 +72,17 @@ h4 {
 
 .play-control svg {
   cursor: pointer;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: black;
 }
 
 .song-container {
@@ -113,6 +126,10 @@ h4 {
   -webkit-box-shadow: 2px 2px 50px #b1b0b0;
           box-shadow: 2px 2px 50px #b1b0b0;
   overflow: scroll;
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .library h2 {
@@ -136,6 +153,16 @@ h4 {
 
 .library-song:hover {
   background: #dedee1;
+}
+
+.selected {
+  background: rgba(143, 126, 218, 0.562);
+}
+
+.active-library {
+  -webkit-transform: translate(0%);
+          transform: translate(0%);
+  opacity: 1;
 }
 
 .song-description {
@@ -167,5 +194,32 @@ h4 {
   background-color: rgba(155, 155, 155, 0.5);
   border-radius: 20px;
   border: transparent;
+}
+
+nav {
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #414141;
+  padding: 0.5rem;
+  -webkit-transition: all 0, 3 ease;
+  transition: all 0, 3 ease;
+}
+
+nav button:hover {
+  background: #414141;
+  color: white;
 }
 /*# sourceMappingURL=app.css.map */

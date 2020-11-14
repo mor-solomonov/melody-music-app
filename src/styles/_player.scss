@@ -11,7 +11,9 @@
   display: flex;
   input {
     width: 100%;
-    padding: 1rem 0rem;
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
   }
   p {
     padding: 1rem;
@@ -27,4 +29,13 @@
   svg {
     cursor: pointer;
   }
+}
+input[type='range']:focus {
+  outline: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: black;
 }
