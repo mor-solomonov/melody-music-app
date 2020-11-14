@@ -1,10 +1,10 @@
 import React from 'react';
-import { playAudio } from '../util';
+
 
 const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, id, setSongs }) => {
 
-    const songSelectHandler = () => {
-        setCurrentSong(song);
+    const songSelectHandler = async () => {
+        await setCurrentSong(song);
         //Add Active state
         const newSongs = songs.map((song) => {
             if (song.id === id) {
@@ -25,7 +25,7 @@ const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, id, set
         //if the clicked item is still undefined wait until it loads .then play
         //without this condition the audioref will not play
         //playAudio is the same function - exported from util
-        playAudio(isPlaying, audioRef);
+        if (isPlaying) audioRef.current.play();
 
         if (isPlaying) {
             const playPromise = audioRef.current.play();
